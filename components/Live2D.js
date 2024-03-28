@@ -44,8 +44,8 @@ export default function Live2D() {
     <div
       style={{
         position: 'relative',
-        maxHeight: '30vw',
-        maxWidth: '30vw',
+        maxHeight: '30vh',
+        maxWidth: '30vh',
         border: '3px solid red'
       }}>
       <div
@@ -67,13 +67,7 @@ export default function Live2D() {
           flexWrap: 'wrap',
           border: '3px solid orange'
         }}></div> */}
-      <div
-        className='Canvas left start-0'
-        style={{
-          width: '20%',
-          maxWidth: '20vw',
-          height: '100vh'
-        }}></div>
+      <div className='Canvas left'></div>
     </div>
   )
 }

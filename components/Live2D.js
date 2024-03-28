@@ -16,14 +16,14 @@ export default function Live2D() {
 
     // 引入所需的 JavaScript 文件
     loadScript('/js/jquery.min.js')
-    loadScript('/js/bootstrap.min.js')
-    loadScript('/js/live2dcubismcore.min.js')
-    loadScript('/js/pixi.min.js')
-    loadScript('/js/live2dcubismframework.js')
-    loadScript('/js/live2dcubismpixi.js')
-    loadScript('/js/charData.js')
-    loadScript('/js/l2d.js')
-    loadScript('/js/main.js')
+      .then(() => loadScript('/js/bootstrap.min.js'))
+      .then(() => loadScript('/js/live2dcubismcore.min.js'))
+      .then(() => loadScript('/js/live2dcubismframework.js'))
+      .then(() => loadScript('/js/live2dcubismpixi.js'))
+      .then(() => loadScript('/js/charData.js'))
+      .then(() => loadScript('/js/l2d.js'))
+      .then(() => loadScript('/js/main.js'))
+      .catch(error => console.error('Failed to load script:', error))
 
     // 清理函数，在组件卸载时移除脚本
     return () => {

@@ -51,6 +51,8 @@ export default function Live2D() {
       <div
         className='form-group'
         style={{
+          position: 'fixed', // 使用定位属性固定在页面左下角
+          left: 0,
           border: '3px solid blue'
         }}>
         <select className='selectCharacter form-control'></select>

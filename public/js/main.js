@@ -53,7 +53,7 @@ class Viewer {
       if (event === void 0) {
         event = null
       }
-      const width = window.innerWidth
+      const width = window.innerWidth * 0.3
       const height = (width / 16.0) * 9.0
       this.app.view.style.width = width + 'px'
       this.app.view.style.height = height + 'px'

@@ -45,6 +45,9 @@ export default function Live2D() {
       <div
         className='position-fixed bottom-0 start-0 p-3'
         style={{
+          position: 'fixed', // 使用定位属性固定在页面左下角
+          bottom: 0,
+          left: 0,
           width: '30%', // 使用百分比设置宽度
           height: '50vh', // 使用视口高度的百分比设置高度
           maxWidth: '950px', // 添加最大宽度限制
@@ -65,7 +68,7 @@ export default function Live2D() {
           display: 'flex',
           flexWrap: 'wrap'
         }}></div>
-      <div className='Canvas left'></div>
+      <div className='Canvas left' width='280' height='250'></div>
     </div>
   )
 }

@@ -52,7 +52,6 @@ export default function Live2D() {
         className='position-fixed bottom-0 start-0 p-3'
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
-          bottom: 0,
           left: 0,
           backgroundColor: '#f0f0f0',
           border: '3px solid blue'
@@ -65,13 +64,18 @@ export default function Live2D() {
         aria-label='Animation'
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
-          bottom: 0,
           left: 0,
           display: 'flex',
           flexWrap: 'wrap',
           border: '3px solid orange'
         }}></div>
-      <div className='Canvas left'></div>
+      <div
+        className='Canvas left bottom-0 start-0'
+        style={{
+          width: '20%',
+          maxWidth: '20vw',
+          height: '100vh'
+        }}></div>
     </div>
   )
 }

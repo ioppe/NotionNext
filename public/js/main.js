@@ -33,8 +33,8 @@ class Viewer {
       this.l2d.load(name, this)
     })
 
-    this.app = new PIXI.Application(320, 240, { backgroundColor: 0xffffff })
-    const width = window.innerWidth
+    this.app = new PIXI.Application(1280, 720, { backgroundColor: 0xffffff })
+    const width = window.innerWidth * 0.3
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'

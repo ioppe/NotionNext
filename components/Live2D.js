@@ -8,10 +8,14 @@ export default function Live2D() {
   useEffect(() => {
     // 动态创建 script 标签并引入外部 JavaScript 文件
     const loadScript = src => {
-      const script = document.createElement('script')
-      script.src = src
-      script.async = true
-      document.body.appendChild(script)
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = src
+        script.async = true
+        script.onload = resolve
+        script.onerror = reject
+        document.body.appendChild(script)
+      })
     }
 
     // 引入所需的 JavaScript 文件

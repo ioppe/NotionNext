@@ -44,8 +44,6 @@ export default function Live2D() {
     <div
       style={{
         position: 'relative',
-        maxHeight: '30vh',
-        maxWidth: '20vh',
         border: '3px solid red'
       }}>
       <div

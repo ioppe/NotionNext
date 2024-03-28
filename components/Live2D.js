@@ -49,7 +49,7 @@ export default function Live2D() {
         border: '3px solid red'
       }}>
       <div
-        className='position-fixed bottom-0 start-0 p-3'
+        className='form-group position-fixed start-0 p-3'
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
           left: 0,
@@ -70,7 +70,7 @@ export default function Live2D() {
           border: '3px solid orange'
         }}></div>
       <div
-        className='Canvas left bottom-0 start-0'
+        className='Canvas left'
         style={{
           width: '20%',
           maxWidth: '20vw',

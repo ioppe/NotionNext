@@ -44,13 +44,13 @@ export default function Live2D() {
     <div>
       <div className='container'>
         <div
-          className='position-fixed bottom-0 start-0 p-3'
-          style={{
-            width: '300px',
-            height: '500px',
-            backgroundColor: '#f0f0f0'
-          }}>
-          <select className='selectCharacter form-control'></select>
+          className='container-fluid position-fixed bottom-0 start-0 bg-light'
+          style={{ width: '30%', height: '50vh' }}>
+          <div className='row h-100'>
+            <div className='col'>
+              <select className='selectCharacter form-control h-100'></select>
+            </div>
+          </div>
         </div>
         <div
           className='selectAnimation btn-group'

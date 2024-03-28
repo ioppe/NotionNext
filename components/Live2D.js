@@ -41,23 +41,28 @@ export default function Live2D() {
   }, [])
 
   return (
-    <div>
-      <div className='container'>
-        <div
-          className='container-fluid position-fixed bottom-0 start-0 bg-light'
-          style={{ width: '30%', height: '50vh' }}>
-          <div className='row h-100'>
-            <div className='col'>
-              <select className='selectCharacter form-control h-100'></select>
-            </div>
-          </div>
-        </div>
-        <div
-          className='selectAnimation btn-group'
-          role='group'
-          aria-label='Animation'
-          style={{ display: 'flex', flexWrap: 'wrap' }}></div>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div
+        className='position-fixed bottom-0 start-0 p-3'
+        style={{
+          width: '30%', // 使用百分比设置宽度
+          height: '50vh', // 使用视口高度的百分比设置高度
+          backgroundColor: '#f0f0f0'
+        }}>
+        <select className='selectCharacter form-control'></select>
       </div>
+      <div
+        className='selectAnimation btn-group'
+        role='group'
+        aria-label='Animation'
+        style={{
+          position: 'fixed', // 使用定位属性固定在页面左下角
+          bottom: 0,
+          left: 0,
+          width: '30%', // 使用百分比设置宽度
+          display: 'flex',
+          flexWrap: 'wrap'
+        }}></div>
       <div className='Canvas left'></div>
     </div>
   )

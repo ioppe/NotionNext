@@ -49,9 +49,8 @@ export default function Live2D() {
         border: '3px solid red'
       }}>
       <div
-        className='form-group position-fixed start-0 p-3'
+        className='form-group'
         style={{
-          backgroundColor: '#f0f0f0',
           border: '3px solid blue'
         }}>
         <select className='selectCharacter form-control'></select>

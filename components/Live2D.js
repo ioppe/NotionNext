@@ -54,7 +54,7 @@ export default function Live2D() {
         }}>
         <select className='selectCharacter form-control'></select>
       </div>
-      <div
+      {/* <div
         className='selectAnimation btn-group'
         role='group'
         aria-label='Animation'
@@ -64,7 +64,7 @@ export default function Live2D() {
           display: 'flex',
           flexWrap: 'wrap',
           border: '3px solid orange'
-        }}></div>
+        }}></div> */}
       <div
         className='Canvas left start-0'
         style={{

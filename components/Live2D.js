@@ -22,6 +22,7 @@ export default function Live2D() {
     loadScript('/js/jquery.min.js')
       .then(() => loadScript('/js/bootstrap.min.js'))
       .then(() => loadScript('/js/live2dcubismcore.min.js'))
+      .then(() => loadScript('/js/pixi.min.js'))
       .then(() => loadScript('/js/live2dcubismframework.js'))
       .then(() => loadScript('/js/live2dcubismpixi.js'))
       .then(() => loadScript('/js/charData.js'))

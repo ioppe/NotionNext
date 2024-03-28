@@ -54,9 +54,6 @@ export default function Live2D() {
           position: 'fixed', // 使用定位属性固定在页面左下角
           bottom: 0,
           left: 0,
-          width: '30%', // 使用百分比设置宽度
-          height: '50vh', // 使用视口高度的百分比设置高度
-          maxWidth: '950px', // 添加最大宽度限制
           backgroundColor: '#f0f0f0',
           border: '3px solid blue'
         }}>
@@ -70,13 +67,11 @@ export default function Live2D() {
           position: 'fixed', // 使用定位属性固定在页面左下角
           bottom: 0,
           left: 0,
-          width: '30%', // 使用百分比设置宽度
-          maxWidth: '950px', // 添加最大宽度限制
           display: 'flex',
           flexWrap: 'wrap',
           border: '3px solid orange'
         }}></div>
-      <div className='Canvas left' width='280' height='250'></div>
+      <div className='Canvas left'></div>
     </div>
   )
 }

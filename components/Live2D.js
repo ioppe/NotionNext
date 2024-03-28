@@ -41,7 +41,12 @@ export default function Live2D() {
   }, [])
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        border: '3px solid red'
+      }}>
       <div
         className='position-fixed bottom-0 start-0 p-3'
         style={{

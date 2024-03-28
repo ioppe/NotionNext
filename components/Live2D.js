@@ -47,6 +47,7 @@ export default function Live2D() {
         style={{
           width: '30%', // 使用百分比设置宽度
           height: '50vh', // 使用视口高度的百分比设置高度
+          maxWidth: '950px', // 添加最大宽度限制
           backgroundColor: '#f0f0f0'
         }}>
         <select className='selectCharacter form-control'></select>
@@ -60,6 +61,7 @@ export default function Live2D() {
           bottom: 0,
           left: 0,
           width: '30%', // 使用百分比设置宽度
+          maxWidth: '950px', // 添加最大宽度限制
           display: 'flex',
           flexWrap: 'wrap'
         }}></div>

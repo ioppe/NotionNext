@@ -43,7 +43,13 @@ export default function Live2D() {
   return (
     <div>
       <div className='container'>
-        <div className='form-group'>
+        <div
+          className='position-fixed bottom-0 start-0 p-3'
+          style={{
+            width: '300px',
+            height: '500px',
+            backgroundColor: '#f0f0f0'
+          }}>
           <select className='selectCharacter form-control'></select>
         </div>
         <div

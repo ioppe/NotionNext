@@ -67,6 +67,9 @@ class Viewer {
       } else {
         if (!this.app.view.parentNode) {
           // 如果 this.app.view 尚未添加到 DOM 中，则将其添加到 DOM 中
+          this.app = new PIXI.Application(1280, 720, {
+            backgroundColor: 0xffffff
+          })
           parent.appendChild(this.app.view)
         }
         this.app.view.style.width = width + 'px'

@@ -66,7 +66,7 @@ class Viewer {
       } else {
         if (!this.app.view.parentNode) {
           // 添加画布元素到 DOM
-          document.body.appendChild(this.app.view)
+          this.app.view.parentNode.appendChild(this.app.view)
         }
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'

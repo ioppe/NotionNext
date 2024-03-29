@@ -25,14 +25,17 @@ class Viewer {
         '<option value="' + charData[val] + '">' + val + '</option>'
     }
     this.selectCharacter.html(stringCharacter)
-    this.selectCharacter.change(event => {
-      if (event.target.selectedIndex == 0) {
-        return
-      }
-      // const name = event.target.value
-      const name = 'Azue Lane(JP)/dafeng_2'
-      this.l2d.load(name, this)
-    })
+    // this.selectCharacter.change(event => {
+    //   if (event.target.selectedIndex == 0) {
+    //     return
+    //   }
+    //   // const name = event.target.value
+    //   // const name = 'Azue Lane(JP)/dafeng_2'
+    //   // this.l2d.load(name, this)
+    // })
+
+    const name = 'Azue Lane(JP)/dafeng_2'
+    this.l2d.load(name, this)
 
     this.app = new PIXI.Application(1280, 720, { backgroundColor: 0xffffff })
     const width = window.innerWidth * 0.3

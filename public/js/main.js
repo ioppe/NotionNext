@@ -62,7 +62,6 @@ class Viewer {
       if (width <= 400) {
         if (this.app && this.app.view.parentNode) {
           this.app.view.parentNode.removeChild(this.app.view)
-          this.app = null // 可以选择将 this.app 设置为 null，以便释放内存
         }
       } else {
         if (!this.app.view.parentNode) {

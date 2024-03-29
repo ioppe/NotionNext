@@ -41,14 +41,8 @@ export default function Live2D() {
   }, [])
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        maxHeight: '30vh',
-        maxWidth: '30vh',
-        border: '3px solid red'
-      }}>
-      <div
+    <div>
+      {/* <div
         className='form-group'
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
@@ -56,7 +50,7 @@ export default function Live2D() {
           border: '3px solid blue'
         }}>
         <select className='selectCharacter form-control'></select>
-      </div>
+      </div> */}
       {/* <div
         className='selectAnimation btn-group'
         role='group'

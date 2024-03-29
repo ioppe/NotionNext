@@ -60,10 +60,15 @@ class Viewer {
       const width = window.innerWidth * 0.3
       const height = (width / 16.0) * 9.0
       if (width <= 400) {
-        // 移除画布元素
-        document.body.removeChild(this.app.view)
-        this.app = null // 可以选择将 this.app 设置为 null，以便释放内存
+        if (this.app && this.app.view.parentNode) {
+          this.app.view.parentNode.removeChild(this.app.view)
+          this.app = null // 可以选择将 this.app 设置为 null，以便释放内存
+        }
       } else {
+        if (!this.app.view.parentNode) {
+          // 添加画布元素到 DOM
+          document.body.appendChild(this.app.view)
+        }
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'
         this.app.renderer.resize(width, height)

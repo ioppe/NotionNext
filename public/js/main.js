@@ -44,9 +44,10 @@ class Viewer {
     // 设置视口缩放
     const width = window.innerWidth * scale
     const height = (width / 16.0) * 9.0
+    const filter = new PIXI.filters.FXAAFilter();
+    this.app.stage.filters = [filter];
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'
-    this.app.view.style.transform = 'scale(${scale})'
     this.app.renderer.resize(width, height)
     this.canvas.html(this.app.view)
 

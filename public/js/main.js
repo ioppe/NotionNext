@@ -66,14 +66,6 @@ class Viewer {
         }
       } else {
         if (!this.app.view.parentNode) {
-          this.app = new PIXI.Application(1280, 720, {
-            backgroundColor: 0x000000
-          })
-          const width = window.innerWidth * 0.3
-          const height = (width / 16.0) * 9.0
-          this.app.view.style.width = width + 'px'
-          this.app.view.style.height = height + 'px'
-          this.app.renderer.resize(width, height)
           this.canvas.html(this.app.view)
         }
         this.app.view.style.width = width + 'px'

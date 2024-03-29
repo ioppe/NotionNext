@@ -43,7 +43,6 @@ class Viewer {
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'
     this.app.renderer.resize(width, height)
-    this.app.view.style.zIndex = '-1'
     this.canvas.html(this.app.view)
 
     this.app.ticker.add(deltaTime => {
@@ -58,25 +57,31 @@ class Viewer {
       if (event === void 0) {
         event = null
       }
-      const width = window.innerWidth * 0.3
-      const height = (width / 16.0) * 9.0
-      this.app.view.style.width = width + 'px'
-      this.app.view.style.height = height + 'px'
-      this.app.renderer.resize(width, height)
+      if (width <= 400) {
+        // 移除画布元素
+        document.body.removeChild(this.app.view)
+        this.app = null // 可以选择将 this.app 设置为 null，以便释放内存
+      } else {
+        const width = window.innerWidth * 0.3
+        const height = (width / 16.0) * 9.0
+        this.app.view.style.width = width + 'px'
+        this.app.view.style.height = height + 'px'
+        this.app.renderer.resize(width, height)
 
-      if (this.model) {
-        this.model.position = new PIXI.Point(width * 0.5, height * 0.5)
-        this.model.scale = new PIXI.Point(
-          this.model.position.x * 0.06,
-          this.model.position.x * 0.06
-        )
-        this.model.masks.resize(this.app.view.width, this.app.view.height)
-      }
-      if (this.model.height <= 200) {
-        this.model.scale = new PIXI.Point(
-          this.model.position.x * 0.6,
-          this.model.position.x * 0.6
-        )
+        if (this.model) {
+          this.model.position = new PIXI.Point(width * 0.5, height * 0.5)
+          this.model.scale = new PIXI.Point(
+            this.model.position.x * 0.06,
+            this.model.position.x * 0.06
+          )
+          this.model.masks.resize(this.app.view.width, this.app.view.height)
+        }
+        if (this.model.height <= 200) {
+          this.model.scale = new PIXI.Point(
+            this.model.position.x * 0.6,
+            this.model.position.x * 0.6
+          )
+        }
       }
     }
     this.isClick = false

@@ -59,10 +59,16 @@ class Viewer {
       }
       const width = window.innerWidth * 0.3
       const height = (width / 16.0) * 9.0
+      const parent = this.app.view.parentNode
       if (width <= 400) {
-        this.app.view.style.backgroundColor = 'transparent'
+        if (this.app && parent) {
+          parent.removeChildren(this.app.view)
+        }
       } else {
-        this.app.view.style.backgroundColor = '#ffffff'
+        if (!this.app.view.parentNode) {
+          // 如果 this.app.view 尚未添加到 DOM 中，则将其添加到 DOM 中
+          parent.appendChild(this.app.view)
+        }
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'
         this.app.renderer.resize(width, height)

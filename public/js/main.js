@@ -64,7 +64,10 @@ class Viewer {
           this.app.view.parentNode.removeChild(this.app.view)
         }
       } else {
-        if (!this.app.view.parentNode) {
+        if (
+          this.app.view.parentNode &&
+          !this.app.view.parentNode.contains(this.app.view)
+        ) {
           // 添加画布元素到 DOM
           this.app.view.parentNode.appendChild(this.app.view)
         }

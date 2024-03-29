@@ -60,17 +60,9 @@ class Viewer {
       const width = window.innerWidth * 0.3
       const height = (width / 16.0) * 9.0
       if (width <= 400) {
-        if (this.app && this.app.view.parentNode) {
-          this.app.view.parentNode.removeChild(this.app.view)
-        }
+        this.app.view.style.backgroundColor = 'transparent'
       } else {
-        if (
-          this.app.view.parentNode &&
-          !this.app.view.parentNode.contains(this.app.view)
-        ) {
-          // 添加画布元素到 DOM
-          this.app.view.parentNode.appendChild(this.app.view)
-        }
+        this.app.view.style.backgroundColor = '#ffffff'
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'
         this.app.renderer.resize(width, height)

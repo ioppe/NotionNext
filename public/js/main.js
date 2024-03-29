@@ -35,10 +35,15 @@ class Viewer {
     // })
 
     const name = 'Azue Lane(JP)/dafeng_2'
+    // 计算缩放比例
+    const scale = 0.3;
+
     this.l2d.load(name, this)
 
     this.app = new PIXI.Application(1920, 1080, { backgroundColor: 0x00000 })
-    const width = window.innerWidth * 0.3
+    // 设置视口缩放
+    this.app.stage.scale.set(scale);
+    const width = window.innerWidth * scale
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'
@@ -57,7 +62,7 @@ class Viewer {
       if (event === void 0) {
         event = null
       }
-      const width = window.innerWidth * 0.3
+      const width = window.innerWidth * scale
       const height = (width / 16.0) * 9.0
       const parent = this.app.view.parentNode
       if (width <= 400) {

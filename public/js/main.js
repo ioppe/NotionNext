@@ -60,7 +60,7 @@ class Viewer {
       this.app.renderer.resize(width, height)
 
       if (this.model) {
-        this.model.position = new PIXI.Point(width * 0.2, height * 0.4)
+        this.model.position = new PIXI.Point(width * 0.3, height * 0.4)
         this.model.scale = new PIXI.Point(
           this.model.position.x * 0.06,
           this.model.position.x * 0.06

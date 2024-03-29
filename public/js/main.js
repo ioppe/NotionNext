@@ -62,7 +62,7 @@ class Viewer {
       const parent = this.app.view.parentNode
       if (width <= 400) {
         if (this.app && parent) {
-          parent.removeChildren(this.app.view)
+          parent.removeChild(this.app.view)
         }
       } else {
         if (!this.app.view.parentNode) {

@@ -43,8 +43,8 @@ class Viewer {
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'
     this.app.renderer.resize(width, height)
+    this.app.view.style.zIndex = '-1'
     this.canvas.html(this.app.view)
-    this.canvas.style.zIndex = '-1'
 
     this.app.ticker.add(deltaTime => {
       if (!this.model) {

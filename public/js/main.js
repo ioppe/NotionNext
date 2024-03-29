@@ -37,7 +37,7 @@ class Viewer {
     const name = 'Azue Lane(JP)/dafeng_2'
     this.l2d.load(name, this)
 
-    this.app = new PIXI.Application(1280, 720, { backgroundColor: 0x00000 })
+    this.app = new PIXI.Application(1920, 1080, { backgroundColor: 0x00000 })
     const width = window.innerWidth * 0.3
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'
@@ -68,6 +68,7 @@ class Viewer {
         if (!this.app.view.parentNode) {
           this.canvas.html(this.app.view)
         }
+        this.app.renderer.backgroundColor = 0xffffff
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'
         this.app.renderer.resize(width, height)

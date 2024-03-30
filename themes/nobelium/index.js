@@ -49,7 +49,7 @@ const LayoutBase = props => {
 
   return (
         <ThemeGlobalNobelium.Provider value={{ searchModal, filterKey, setFilterKey }}>
-            <div id='theme-nobelium' className={`${siteConfig('FONT_STYLE')} nobelium relative dark:text-gray-300  w-full  bg-white dark:bg-black min-h-screen flex flex-col scroll-smooth`} style='z-index: 0'>
+            <div id='theme-nobelium' className={`${siteConfig('FONT_STYLE')} nobelium relative dark:text-gray-300  w-full  bg-white dark:bg-black min-h-screen flex flex-col scroll-smooth`}>
 
                 <Style />
 
@@ -57,7 +57,7 @@ const LayoutBase = props => {
                 <Nav {...props} />
 
                 {/* 主区 */}
-                <main id='out-wrapper' className={`relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'}`}>
+                <main id='out-wrapper' className={`relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'}`} style='z-index: 0'>
 
                     <Transition
                         show={!onLoading}
@@ -86,7 +86,7 @@ const LayoutBase = props => {
                 </div>
 
                 {/* 左下悬浮 */}
-                <div className="bottom-4 -left-14 absolute justify-end z-40" style='z-index: 0'>
+                <div className="bottom-4 -left-14 absolute justify-end z-40" style="z-index: 0">
                     <Live2D />
                 </div>
 

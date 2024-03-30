@@ -27,6 +27,7 @@ const scripts = [
   "/js/bootstrap.min.js",
   "/js/live2dcubismcore.min.js",
   "/js/pixi.min.js",
+  "/js/live2dcubismframework.js"
   "/js/live2dcubismpixi.js",
   "/js/charData.js",
   "/js/l2d.js"

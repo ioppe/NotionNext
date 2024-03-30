@@ -4,18 +4,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-var */
 // eslint-disable-next-line no-unused-vars
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-
-<script src="/js/live2dcubismcore.min.js"></script>
-
-<script src="/js/pixi.min.js"></script>
-
-<script src="/js/live2dcubismpixi.js"></script>
-
-<script src="/js/charData.js"></script>
-
-<script src="/js/l2d.js"></script>
+script.src="/js/jquery.min.js";
+script.src="/js/bootstrap.min.js";
+script.src="/js/live2dcubismcore.min.js";
+script.src="/js/pixi.min.js";
+script.src="/js/live2dcubismpixi.js";
+script.src="/js/charData.js";
+script.src="/js/l2d.js";
 
 
 

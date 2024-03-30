@@ -8,7 +8,7 @@ var v
 // v.l2d.models
 // eslint-disable-next-line no-undef
 $(document).ready(() => {
-  v = new Viewer('model')
+  v = new Viewer('/model')
 })
 
 class Viewer {

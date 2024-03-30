@@ -4,15 +4,44 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-var */
 // eslint-disable-next-line no-unused-vars
-const script = document.createElement('script');
-script.src="/js/jquery.min.js";
-script.src="/js/bootstrap.min.js";
-script.src="/js/live2dcubismcore.min.js";
-script.src="/js/pixi.min.js";
-script.src="/js/live2dcubismpixi.js";
-script.src="/js/charData.js";
-script.src="/js/l2d.js";
 
+// 定义一个加载脚本的函数
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    // 创建一个 <script> 元素
+    const script = document.createElement('script');
+    // 设置要加载的 JavaScript 文件的 URL
+    script.src = src;
+    // 监听加载完成事件
+    script.onload = () => resolve();
+    // 监听加载失败事件
+    script.onerror = (error) => reject(error);
+    // 将 <script> 元素添加到文档的 <head> 元素中，开始加载外部 JavaScript 文件
+    document.head.appendChild(script);
+  });
+}
+
+// 定义要加载的 JavaScript 文件列表
+const scripts = [
+  "/js/jquery.min.js";
+  "/js/bootstrap.min.js";
+  "/js/live2dcubismcore.min.js";
+  "/js/pixi.min.js";
+  "/js/live2dcubismpixi.js";
+  "/js/charData.js";
+  "/js/l2d.js";
+];
+
+// 依次加载多个 JavaScript 文件
+Promise.all(scripts.map(src => loadScript(src)))
+  .then(() => {
+    // 所有文件加载完成后执行的操作
+    console.log('All scripts loaded successfully');
+  })
+  .catch(error => {
+    // 加载过程中出现错误时执行的操作
+    console.error('Failed to load scripts:', error);
+  });
 
 
 var v

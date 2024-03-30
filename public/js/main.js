@@ -29,7 +29,7 @@ function loadScript(src) {
 //   v = new Viewer('/model')
 // })
 
-function createView() {
+export default function createView() {
   // 依次加载多个 JavaScript 文件
   Promise.all([
     loadScript('/js/jquery.min.js')
@@ -54,8 +54,6 @@ function createView() {
     v = new Viewer('/model')
   });
 }
-
-createView()
 
 class Viewer {
   constructor(basePath) {

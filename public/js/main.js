@@ -5,13 +5,6 @@
 /* eslint-disable no-var */
 // eslint-disable-next-line no-unused-vars
 
-var v
-// v.l2d.models
-// eslint-disable-next-line no-undef
-$(document).ready(() => {
-  v = new Viewer('/model')
-})
-
 // 定义一个加载脚本的函数
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -49,6 +42,13 @@ Promise.all(scripts.map(src => loadScript(src)))
     // 加载过程中出现错误时执行的操作
     console.error('Failed to load scripts:', error);
   });
+
+var v
+// v.l2d.models
+// eslint-disable-next-line no-undef
+$(document).ready(() => {
+  v = new Viewer('/model')
+})
 
 class Viewer {
   constructor(basePath) {

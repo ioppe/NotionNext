@@ -35,7 +35,7 @@ const scripts = [
 
 // 依次加载多个 JavaScript 文件
 Promise.all([
-  loadScript('/js/bootstrap.min.js'))
+  loadScript('/js/bootstrap.min.js')
       .then(() => loadScript('/js/live2dcubismcore.min.js'))
       .then(() => loadScript('/js/pixi.min.js'))
       .then(() => loadScript('/js/live2dcubismframework.js'))

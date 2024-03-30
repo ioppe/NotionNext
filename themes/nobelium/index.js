@@ -49,7 +49,7 @@ const LayoutBase = props => {
 
   return (
         <ThemeGlobalNobelium.Provider value={{ searchModal, filterKey, setFilterKey }}>
-            <div id='theme-nobelium' className={`${siteConfig('FONT_STYLE')} nobelium relative dark:text-gray-300  w-full  bg-white dark:bg-black min-h-screen flex flex-col scroll-smooth`}>
+            <div id='theme-nobelium' className={`${siteConfig('FONT_STYLE')} nobelium relative dark:text-gray-300  w-full  bg-white dark:bg-black min-h-screen flex flex-col scroll-smooth`} style='z-index: 0'>
 
                 <Style />
 
@@ -86,8 +86,7 @@ const LayoutBase = props => {
                 </div>
 
                 {/* 左下悬浮 */}
-                {/* <div className="bottom-4 -left-14 fixed justify-end z-40"> */}
-                <div>
+                <div className="bottom-4 -left-14 absolute justify-end z-40" style='z-index: 0'>
                     <Live2D />
                 </div>
 

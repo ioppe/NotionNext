@@ -40,7 +40,7 @@ class Viewer {
 
     this.l2d.load(name, this)
 
-    this.app = new PIXI.Application(3840, 2160, { transparent: true })
+    this.app = new PIXI.Application(1280, 720, { transparent: true })
     // 设置视口缩放
     this.app.renderer.roundPixels = true;
     const width = window.innerWidth 
@@ -80,8 +80,8 @@ class Viewer {
         if (this.model) {
           this.model.position = new PIXI.Point(width * 0.5, height * 0.5)
           this.model.scale = new PIXI.Point(
-            this.model.position.x * 0.06,
-            this.model.position.x * 0.06
+            this.model.position.x * 0.03,
+            this.model.position.x * 0.03
           )
           this.model.masks.resize(this.app.view.width, this.app.view.height)
         }

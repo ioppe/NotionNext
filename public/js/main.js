@@ -48,12 +48,13 @@ Promise.all([
   .then(() => {
     // 所有文件加载完成后执行的操作
     console.log('All scripts loaded successfully');
-    var v
-    v = new Viewer('/model')
+    
   })
   .catch(error => {
     // 加载过程中出现错误时执行的操作
     console.error('Failed to load scripts:', error);
+    var v
+    createView(v)
   });
 
 // var v
@@ -63,7 +64,11 @@ Promise.all([
 //   v = new Viewer('/model')
 // })
 
-class Viewer {
+function createView(v) {
+  v = new Viewer('/model')
+}
+
+export class Viewer {
   constructor(basePath) {
     this.l2d = new L2D(basePath)
 

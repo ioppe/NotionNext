@@ -41,8 +41,7 @@ class Viewer {
     this.l2d.load(name, this)
 
     this.app = new PIXI.Application(1280, 720, { transparent: true })
-    // 设置视口缩放
-    this.app.renderer.roundPixels = true;
+    this.app.view.style.pointerEvents = 'none';
     const width = window.innerWidth 
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'

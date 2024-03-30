@@ -29,7 +29,7 @@ function loadScript(src) {
 //   v = new Viewer('/model')
 // })
 
-export default function createView() {
+export function createView() {
   // 依次加载多个 JavaScript 文件
   Promise.all([
     loadScript('/js/jquery.min.js')

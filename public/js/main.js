@@ -37,18 +37,20 @@ Promise.all(scripts.map(src => loadScript(src)))
   .then(() => {
     // 所有文件加载完成后执行的操作
     console.log('All scripts loaded successfully');
+    var v
+    v = new Viewer('/model')
   })
   .catch(error => {
     // 加载过程中出现错误时执行的操作
     console.error('Failed to load scripts:', error);
   });
 
-var v
+// var v
 // v.l2d.models
 // eslint-disable-next-line no-undef
-$(document).ready(() => {
-  v = new Viewer('/model')
-})
+// $(document).ready(() => {
+//   v = new Viewer('/model')
+// })
 
 class Viewer {
   constructor(basePath) {

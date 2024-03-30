@@ -4,6 +4,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-var */
 // eslint-disable-next-line no-unused-vars
+const script = document.createElement('script');
 script.src="/js/jquery.min.js";
 script.src="/js/bootstrap.min.js";
 script.src="/js/live2dcubismcore.min.js";

@@ -34,7 +34,16 @@ const scripts = [
 ];
 
 // 依次加载多个 JavaScript 文件
-Promise.all(scripts.map(src => loadScript(src)))
+Promise.all([
+  loadScript('/js/bootstrap.min.js'))
+      .then(() => loadScript('/js/live2dcubismcore.min.js'))
+      .then(() => loadScript('/js/pixi.min.js'))
+      .then(() => loadScript('/js/live2dcubismframework.js'))
+      .then(() => loadScript('/js/live2dcubismpixi.js'))
+      .then(() => loadScript('/js/charData.js'))
+      .then(() => loadScript('/js/l2d.js'))
+      .catch(error => console.error('Failed to load script:', error))
+])
   .then(() => {
     // 所有文件加载完成后执行的操作
     console.log('All scripts loaded successfully');

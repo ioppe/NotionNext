@@ -21,20 +21,17 @@ function loadScript(src) {
   });
 }
 
-// 定义要加载的 JavaScript 文件列表
-const scripts = [
-  "/js/jquery.min.js",
-  "/js/bootstrap.min.js",
-  "/js/live2dcubismcore.min.js",
-  "/js/pixi.min.js",
-  "/js/live2dcubismframework.js",
-  "/js/live2dcubismpixi.js",
-  "/js/charData.js",
-  "/js/l2d.js"
-];
 
-// 依次加载多个 JavaScript 文件
-Promise.all([
+// var v
+// v.l2d.models
+// eslint-disable-next-line no-undef
+// $(document).ready(() => {
+//   v = new Viewer('/model')
+// })
+
+function createView() {
+  // 依次加载多个 JavaScript 文件
+  Promise.all([
     loadScript('/js/jquery.min.js')
       .then(() => loadScript('/js/bootstrap.min.js'))
       .then(() => loadScript('/js/live2dcubismcore.min.js'))
@@ -54,19 +51,11 @@ Promise.all([
     // 加载过程中出现错误时执行的操作
     console.error('Failed to load scripts:', error);
     var v
-    createView(v)
+    v = new Viewer('/model')
   });
-
-// var v
-// v.l2d.models
-// eslint-disable-next-line no-undef
-// $(document).ready(() => {
-//   v = new Viewer('/model')
-// })
-
-function createView(v) {
-  v = new Viewer('/model')
 }
+
+createView()
 
 class Viewer {
   constructor(basePath) {

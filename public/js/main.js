@@ -68,7 +68,7 @@ function createView(v) {
   v = new Viewer('/model')
 }
 
-export class Viewer {
+class Viewer {
   constructor(basePath) {
     this.l2d = new L2D(basePath)
 

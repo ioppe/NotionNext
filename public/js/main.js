@@ -80,8 +80,8 @@ class Viewer {
         if (this.model) {
           this.model.position = new PIXI.Point(width * 0.2, height * 0.5)
           this.model.scale = new PIXI.Point(
-            this.model.position.x * 0.03,
-            this.model.position.x * 0.03
+            this.model.position.x * 0.06,
+            this.model.position.x * 0.06
           )
           this.model.masks.resize(this.app.view.width, this.app.view.height)
         }

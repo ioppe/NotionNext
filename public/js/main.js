@@ -36,7 +36,7 @@ class Viewer {
 
     const name = 'Azue Lane(JP)/dafeng_2'
     // 计算缩放比例
-    const scale = 0.3;
+    const scale = 0.4;
 
     this.l2d.load(name, this)
 
@@ -62,7 +62,7 @@ class Viewer {
       if (event === void 0) {
         event = null
       }
-      const width = window.innerWidth * 0.3
+      const width = window.innerWidth * scale
       const height = (width / 16.0) * 9.0
       const parent = this.app.view.parentNode
       if (width <= 400) {
@@ -73,7 +73,6 @@ class Viewer {
         if (!this.app.view.parentNode) {
           this.canvas.html(this.app.view)
         }
-        this.app.renderer.backgroundColor = 0xffffff
         this.app.view.style.width = width + 'px'
         this.app.view.style.height = height + 'px'
         this.app.renderer.resize(width, height)

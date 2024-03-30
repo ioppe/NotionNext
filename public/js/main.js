@@ -43,7 +43,7 @@ class Viewer {
     this.app = new PIXI.Application(3840, 2160, { transparent: true })
     // 设置视口缩放
     this.app.renderer.roundPixels = true;
-    const width = window.innerWidth * scale
+    const width = window.innerWidth 
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'
@@ -62,7 +62,7 @@ class Viewer {
       if (event === void 0) {
         event = null
       }
-      const width = window.innerWidth * scale
+      const width = window.innerWidth
       const height = (width / 16.0) * 9.0
       const parent = this.app.view.parentNode
       if (width <= 400) {

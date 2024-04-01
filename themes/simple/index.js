@@ -94,8 +94,8 @@ const LayoutBase = props => {
             (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
               ? 'flex-row-reverse'
               : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'
-          } style={{ zIndex: 2 }} >
-          <div id='container-inner ' className='w-full flex-grow min-h-fit'>
+          } >
+          <div id='container-inner ' className='w-full flex-grow min-h-fit' style={{ zIndex: 2 }}>
             <Transition
               show={!onLoading}
               appear={true}
@@ -116,7 +116,7 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               id='right-sidebar'
-              className='hidden xl:block flex-none sticky top-8 w-96 border-l dark:border-gray-800 pl-12 border-gray-100'>
+              className='hidden xl:block flex-none sticky top-8 w-96 border-l dark:border-gray-800 pl-12 border-gray-100' style={{ zIndex: 2 }}>
               <SideBar {...props} />
             </div>
           )}

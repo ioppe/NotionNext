@@ -127,8 +127,8 @@ class Viewer {
           if(this.themes == 'SIMPLE'){
             this.model.position = new PIXI.Point(width * 0.8, height * 0.7)
             this.model.scale = new PIXI.Point(
-            this.model.position.x * 0.01,
-            this.model.position.x * 0.01
+            this.model.position.x * 0.02,
+            this.model.position.x * 0.02
           )
           }else{
             this.model.position = new PIXI.Point(width * 0.2, height * 0.7)

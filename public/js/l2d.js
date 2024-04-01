@@ -23,9 +23,9 @@ class L2D {
   }
 
   load(name, v) {
+    const modelDir = name + '/'
     name = name.split('/').pop()
     if (!this.models[name]) {
-      const modelDir = name + '/'
       const modelPath = name + '.model3.json'
       const textures = new Array()
       let textureCount = 0

@@ -17,8 +17,13 @@ export default function Live2D(props) {
   return (
     <div>
       <div
-        className='form-group position-fixed fixed-bottom bg-dark'>
-        <select className='selectCharacter form-control bg-white text-dark'></select>
+        className='form-group bg-dark'
+        style={{
+        position: 'fixed',
+        left: 0,
+        bottom: 0
+      }}>
+        <select className='selectCharacter form-control bg-dark text-white'></select>
       </div>
       {/* <div
         className='selectAnimation btn-group'

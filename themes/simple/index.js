@@ -2,6 +2,7 @@ import { AdSlot } from '@/components/GoogleAdsense'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
 import { siteConfig } from '@/lib/config'
+import Live2D from '@/components/Live2D'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
@@ -118,6 +119,11 @@ const LayoutBase = props => {
               <SideBar {...props} />
             </div>
           )}
+        </div>
+
+        <div 
+        className='bottom-4 -left-14 fixed'>
+          <Live2D />
         </div>
 
         <div className='fixed right-4 bottom-4 z-20'>

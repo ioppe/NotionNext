@@ -63,11 +63,16 @@ class Viewer {
     this.selectAnimation = $('.selectAnimation')
 
     let stringCharacter = '<option>Select</option>'
+    let selectedIndex = 0 // 设置默认索引
     for (const val in charData) {
       stringCharacter +=
         '<option value="' + charData[val] + '">' + val + '</option>'
+      if (charData[val] === '1') {
+        selectedIndex = Object.keys(charData).indexOf(val) + 1 // 设置索引为对应值的索引加1
+      }
     }
     this.selectCharacter.html(stringCharacter)
+    this.selectCharacter.prop('selectedIndex', selectedIndex) // 设置默认选中值
     this.selectCharacter.change(event => {
       if (event.target.selectedIndex == 0) {
         return

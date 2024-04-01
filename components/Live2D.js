@@ -19,7 +19,7 @@ export default function Live2D() {
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
           left: 0,
-          border: '3px solid blue'
+          bottom: 0
         }}>
         <select className='selectCharacter form-control'></select>
       </div>

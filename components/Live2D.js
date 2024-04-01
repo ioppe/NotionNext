@@ -9,12 +9,12 @@ import { createView } from '@/public/js/main'
 export default function Live2D() {
   useEffect(() => {
     // 创建live2D
-    // createView()
+    createView()
   }, [])
 
   return (
     <div>
-      {/* <div
+      <div
         className='form-group'
         style={{
           position: 'fixed', // 使用定位属性固定在页面左下角
@@ -22,7 +22,7 @@ export default function Live2D() {
           border: '3px solid blue'
         }}>
         <select className='selectCharacter form-control'></select>
-      </div> */}
+      </div>
       {/* <div
         className='selectAnimation btn-group'
         role='group'

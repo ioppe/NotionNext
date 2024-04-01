@@ -76,7 +76,7 @@ const LayoutBase = props => {
     <ThemeGlobalSimple.Provider value={{ searchModal }}>
       <div
         id='theme-simple'
-        className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`} style={{ zIndex: 1 }}>
+        className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`}>
         <Style />
 
         {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
@@ -94,7 +94,7 @@ const LayoutBase = props => {
             (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
               ? 'flex-row-reverse'
               : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'
-          }>
+          } style={{ zIndex: 2 }} >
           <div id='container-inner ' className='w-full flex-grow min-h-fit'>
             <Transition
               show={!onLoading}
@@ -123,7 +123,7 @@ const LayoutBase = props => {
         </div>
 
         <div 
-        className='bottom-4 -left-14 fixed'>
+        className='bottom-4 -left-14 fixed' style={{ zIndex: 1 }}>
           <Live2D data={themes}/>
         </div>
 

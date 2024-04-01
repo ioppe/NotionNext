@@ -58,6 +58,7 @@ const RecommendPosts = dynamic(() => import('./components/RecommendPosts'), {
 
 // 主题全局状态
 const ThemeGlobalSimple = createContext()
+const themes = "simple"
 export const useSimpleGlobal = () => useContext(ThemeGlobalSimple)
 
 /**
@@ -123,7 +124,7 @@ const LayoutBase = props => {
 
         <div 
         className='bottom-4 -left-14 fixed'>
-          <Live2D />
+          <Live2D data={themes}/>
         </div>
 
         <div className='fixed right-4 bottom-4 z-20'>

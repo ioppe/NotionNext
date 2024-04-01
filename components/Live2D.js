@@ -6,10 +6,12 @@ import { createView } from '@/public/js/main'
  * 网页动画
  * @returns
  */
-export default function Live2D() {
+export default function Live2D(props) {
   useEffect(() => {
+    const data = props.data
+
     // 创建live2D
-    createView()
+    createView(data)
   }, [])
 
   return (

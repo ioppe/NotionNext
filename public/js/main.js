@@ -6,6 +6,8 @@
 /* eslint-disable no-var */
 // eslint-disable-next-line no-unused-vars
 
+import { siteConfig } from '@/lib/config'
+
 // 定义一个加载脚本的函数
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -29,7 +31,7 @@ function loadScript(src) {
 //   v = new Viewer('/model')
 // })
 
-export function createView() {
+export function createView(data) {
   // 依次加载多个 JavaScript 文件
   Promise.all([
     loadScript('/js/jquery.min.js')
@@ -46,7 +48,7 @@ export function createView() {
       // 所有文件加载完成后执行的操作
       console.log('All scripts loaded successfully')
       var v
-      v = new Viewer('/model')
+      v = new Viewer('/model',data)
     })
     .catch(error => {
       // 加载过程中出现错误时执行的操作
@@ -55,8 +57,9 @@ export function createView() {
 }
 
 class Viewer {
-  constructor(basePath) {
+  constructor(basePath, themes) {
     this.l2d = new L2D(basePath)
+    this.themes = themes
 
     this.canvas = $('.Canvas')
     this.selectCharacter = $('.selectCharacter')
@@ -82,9 +85,6 @@ class Viewer {
       this.l2d.load(name, this)
     })
 
-    // const name = 'Azue Lane(JP)/dafeng_2'
-    // 计算缩放比例
-    const scale = 0.4
 
     this.l2d.load(charData[name], this)
 
@@ -124,7 +124,11 @@ class Viewer {
         this.app.renderer.resize(width, height)
 
         if (this.model) {
-          this.model.position = new PIXI.Point(width * 0.2, height * 0.7)
+          if(this.themes == 'SIMPLE'){
+            this.model.position = new PIXI.Point(width * 0.7, height * 0.7)
+          }else{
+            this.model.position = new PIXI.Point(width * 0.2, height * 0.7)
+          }
           this.model.scale = new PIXI.Point(
             this.model.position.x * 0.06,
             this.model.position.x * 0.06

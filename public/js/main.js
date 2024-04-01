@@ -138,12 +138,12 @@ class Viewer {
       this.isClick = true
     })
     this.app.view.addEventListener('mousemove', event => {
-      if (this.isClick) {
-        this.isClick = false
-        if (this.model) {
-          this.model.inDrag = true
-        }
+      // if (this.isClick) {
+      //   this.isClick = false
+      if (this.model) {
+        this.model.inDrag = true
       }
+      // }
 
       if (this.model) {
         const mouse_x = this.model.position.x - event.offsetX

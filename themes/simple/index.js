@@ -58,7 +58,7 @@ const RecommendPosts = dynamic(() => import('./components/RecommendPosts'), {
 
 // 主题全局状态
 const ThemeGlobalSimple = createContext()
-const themes = "simple"
+const themes = "SIMPLE"
 export const useSimpleGlobal = () => useContext(ThemeGlobalSimple)
 
 /**

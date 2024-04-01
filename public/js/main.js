@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* eslint-disable no-void */
 /* eslint-disable eqeqeq */
@@ -9,18 +10,17 @@
 function loadScript(src) {
   return new Promise((resolve, reject) => {
     // 创建一个 <script> 元素
-    const script = document.createElement('script');
+    const script = document.createElement('script')
     // 设置要加载的 JavaScript 文件的 URL
-    script.src = src;
+    script.src = src
     // 监听加载完成事件
-    script.onload = () => resolve();
+    script.onload = () => resolve()
     // 监听加载失败事件
-    script.onerror = (error) => reject(error);
+    script.onerror = error => reject(error)
     // 将 <script> 元素添加到文档的 <head> 元素中，开始加载外部 JavaScript 文件
-    document.head.appendChild(script);
-  });
+    document.head.appendChild(script)
+  })
 }
-
 
 // var v
 // v.l2d.models
@@ -41,17 +41,17 @@ export function createView() {
       .then(() => loadScript('/js/charData.js'))
       .then(() => loadScript('/js/l2d.js'))
       .catch(error => console.error('Failed to load script:', error))
-])
-  .then(() => {
-    // 所有文件加载完成后执行的操作
-    console.log('All scripts loaded successfully');
-    var v
-    v = new Viewer('/model')
-  })
-  .catch(error => {
-    // 加载过程中出现错误时执行的操作
-    console.error('Failed to load scripts:', error);
-  });
+  ])
+    .then(() => {
+      // 所有文件加载完成后执行的操作
+      console.log('All scripts loaded successfully')
+      var v
+      v = new Viewer('/model')
+    })
+    .catch(error => {
+      // 加载过程中出现错误时执行的操作
+      console.error('Failed to load scripts:', error)
+    })
 }
 
 class Viewer {
@@ -79,12 +79,12 @@ class Viewer {
 
     const name = 'Azue Lane(JP)/dafeng_2'
     // 计算缩放比例
-    const scale = 0.4;
+    const scale = 0.4
 
     this.l2d.load(name, this)
 
     this.app = new PIXI.Application(1280, 720, { transparent: true })
-    const width = window.innerWidth 
+    const width = window.innerWidth
     const height = (width / 16.0) * 9.0
     this.app.view.style.width = width + 'px'
     this.app.view.style.height = height + 'px'

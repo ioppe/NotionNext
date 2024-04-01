@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable no-constant-condition */
 /* eslint-disable dot-notation */
 /* eslint-disable no-array-constructor */
@@ -30,9 +31,11 @@ class L2D {
       let textureCount = 0
       const motionNames = new Array()
 
-      this.loader.add(name + '_model', modelDir + modelPath, {
-        xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON
-      })
+      if (!this.loader.resources.hasOwnProperty(name + '_model')) {
+        this.loader.add(name + '_model', modelDir + modelPath, {
+          xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON
+        })
+      }
 
       this.loader.load((loader, resources) => {
         const model3Obj = resources[name + '_model'].data

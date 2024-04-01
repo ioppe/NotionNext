@@ -67,7 +67,7 @@ class Viewer {
     for (const val in charData) {
       stringCharacter +=
         '<option value="' + charData[val] + '">' + val + '</option>'
-      if (charData[val] === '1') {
+      if (val === '平海') {
         selectedIndex = Object.keys(charData).indexOf(val) + 1 // 设置索引为对应值的索引加1
       }
     }

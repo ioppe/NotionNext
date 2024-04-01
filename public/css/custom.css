@@ -6,3 +6,17 @@
 .fa-info:before {
     content: "\f05a";
 }
+
+.bg-dark {
+  background-color: black !important;
+}
+
+.bg-dark select {
+  color: white;
+}
+
+@media (prefers-color-scheme: light) {
+  .bg-dark select {
+    color: black;
+  }
+}

@@ -17,13 +17,8 @@ export default function Live2D(props) {
   return (
     <div>
       <div
-        className='form-group'
-        style={{
-          position: 'fixed', // 使用定位属性固定在页面左下角
-          left: 0,
-          bottom: 0
-        }}>
-        <select className='selectCharacter form-control'></select>
+        className='form-group position-fixed fixed-bottom bg-dark'>
+        <select className='selectCharacter form-control bg-white text-dark'></select>
       </div>
       {/* <div
         className='selectAnimation btn-group'

@@ -86,7 +86,7 @@ class Viewer {
     // 计算缩放比例
     const scale = 0.4
 
-    this.l2d.load(name, this)
+    this.l2d.load(charData[name], this)
 
     this.app = new PIXI.Application(1280, 720, { transparent: true })
     const width = window.innerWidth

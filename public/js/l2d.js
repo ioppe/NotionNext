@@ -23,19 +23,17 @@ class L2D {
   }
 
   load(name, v) {
+    name = name.split('/').pop()
     if (!this.models[name]) {
       const modelDir = name + '/'
-      name = name.split('/').pop()
       const modelPath = name + '.model3.json'
       const textures = new Array()
       let textureCount = 0
       const motionNames = new Array()
 
-      if (!this.loader.hasOwnProperty(name + '_model')) {
-        this.loader.add(name + '_model', modelDir + modelPath, {
-          xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON
-        })
-      }
+      this.loader.add(name + '_model', modelDir + modelPath, {
+        xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON
+      })
 
       this.loader.load((loader, resources) => {
         const model3Obj = resources[name + '_model'].data

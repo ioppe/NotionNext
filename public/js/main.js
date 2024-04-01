@@ -64,10 +64,11 @@ class Viewer {
 
     let stringCharacter = '<option>Select</option>'
     let selectedIndex = 0 // 设置默认索引
+    const name = '平海'
     for (const val in charData) {
       stringCharacter +=
         '<option value="' + charData[val] + '">' + val + '</option>'
-      if (val === '平海') {
+      if (val === name) {
         selectedIndex = Object.keys(charData).indexOf(val) + 1 // 设置索引为对应值的索引加1
       }
     }

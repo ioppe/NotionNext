@@ -126,13 +126,17 @@ class Viewer {
         if (this.model) {
           if(this.themes == 'SIMPLE'){
             this.model.position = new PIXI.Point(width * 0.7, height * 0.7)
+            this.model.scale = new PIXI.Point(
+            this.model.position.x * 0.03,
+            this.model.position.x * 0.03
+          )
           }else{
             this.model.position = new PIXI.Point(width * 0.2, height * 0.7)
-          }
-          this.model.scale = new PIXI.Point(
-            this.app.view.style.width * 0.06,
-            this.app.view.style.width * 0.06
+            this.model.scale = new PIXI.Point(
+            this.model.position.x * 0.06,
+            this.model.position.x * 0.06
           )
+          }
           this.model.masks.resize(this.app.view.width, this.app.view.height)
         }
       }

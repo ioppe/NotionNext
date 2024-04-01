@@ -31,7 +31,7 @@ class L2D {
       let textureCount = 0
       const motionNames = new Array()
 
-      if (!this.loader.resources.hasOwnProperty(name + '_model')) {
+      if (!this.loader.hasOwnProperty(name + '_model')) {
         this.loader.add(name + '_model', modelDir + modelPath, {
           xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON
         })
